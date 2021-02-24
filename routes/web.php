@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+// Ruta para ir al home
+Route::view('/', 'examen.home');
+/*
+Route::view('/', function(){
+    return redirect('examen.formulario');
+});
+*/
+
+// Ruta para todo lo relacionado con el formulario de tutores
+Route::resource('/tutores', TutoresController::class);
+
